@@ -1,0 +1,38 @@
+body {
+  background-color: hsl(148, 38%, 91%);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+form > * + *,
+fieldset > * + * {
+  margin-block-start: 1rem;
+}
+
+.form-group > * + * {
+  margin-block-start: 0.5rem;
+}
+
+label + input:not([type="radio"], [type="checkbox"]),
+label + textarea {
+  display: block;
+}
+
+.form-group:has(input:required) label:after,
+.form-group:has(textarea:required) label:after,
+fieldset:has(input:required) legend:after {
+  content: " * ";
+  font-size: 0.8em;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-inline-end: 0.5rem;
+}
+
+.error {
+  display: block;
+}
