@@ -53,7 +53,7 @@ function ContactUsForm() {
 
   return (
     <>
-      <form className="form-container" onSubmit={handleSubmit} noValidate>
+      <form className="form-container bg-100" onSubmit={handleSubmit} noValidate>
         {formSubmit && (
           <div className="toast" aria-role="alert">
             <span>
