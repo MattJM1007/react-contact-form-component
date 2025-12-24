@@ -53,60 +53,68 @@ function ContactUsForm() {
 
   return (
     <>
-      <form className="form-container bg-100" onSubmit={handleSubmit} noValidate>
+      <form className="wrapper flow flow--lg bg-100 pad-lg br-400" onSubmit={handleSubmit} noValidate>
         {formSubmit && (
-          <div className="toast" aria-role="alert">
-            <span>
+          <div className="toast flow flow--sm pad-lg br-200" aria-role="alert">
+            <span className="flex-flow align-center fs-md fw-bold">
               <img src="../src/assets/images/icon-success-check.svg" alt="" />
               Message sent!
             </span>
-            <p>Thanks for completing the form. We'll be in touch soon!</p>
+            <p className="clr-primary-200">Thanks for completing the form. We'll be in touch soon!</p>
           </div>
         )}
 
-        <h1 className="form-title">Contact Us</h1>
+        <h1 className="fs-lg">Contact Us</h1>
 
-        <FormGroup isValid={error.fName} errorMsg="This field is required">
-          <label htmlFor="fName">First Name</label>
-          <input type="text" name="fName" id="fName" required onBlur={checkError} onChange={clearError} />
-        </FormGroup>
+        <div className="flow flow--lg grid-2-col">
+          <FormGroup isValid={error.fName} errorMsg="This field is required">
+            <label htmlFor="fName">First Name</label>
+            <input type="text" name="fName" id="fName" required onBlur={checkError} onChange={clearError} />
+          </FormGroup>
 
-        <FormGroup isValid={error.lName} errorMsg="This field is required">
-          <label htmlFor="lName">Last Name</label>
-          <input type="text" name="lName" id="lName" required onBlur={checkError} onChange={clearError} />
-        </FormGroup>
+          <FormGroup isValid={error.lName} errorMsg="This field is required">
+            <label htmlFor="lName">Last Name</label>
+            <input type="text" name="lName" id="lName" required onBlur={checkError} onChange={clearError} />
+          </FormGroup>
+        </div>
 
         <FormGroup isValid={error.email} errorMsg="Please enter a valid email">
           <label htmlFor="email">Email Address</label>
           <input type="email" name="email" id="email" required onBlur={checkError} onChange={clearError} />
         </FormGroup>
 
-        <fieldset>
+        <fieldset className="flow">
           <legend>Query Type</legend>
-          <FormGroup isValid={error.queryType} errorMsg="Please select a query">
-            <div className="radio-group">
+          <FormGroup className="grid-flow grid-2-col" isValid={error.queryType} errorMsg="Please select a query">
+            <label className="radio-group span-1 fs-md" htmlFor="generalEnquiry">
               <input type="radio" name="queryType" id="generalEnquiry" value="general" required onChange={clearError} />
-              <label htmlFor="generalEnquiry">General Enquiry</label>
-            </div>
+              General Enquiry
+            </label>
 
-            <div className="radio-group">
+            <label className="radio-group fs-md" htmlFor="supportRequest">
               <input type="radio" name="queryType" id="supportRequest" value="support" required onChange={clearError} />
-              <label htmlFor="supportRequest">Support Request</label>
-            </div>
+              <span>Support Request</span>
+            </label>
           </FormGroup>
         </fieldset>
 
         <FormGroup isValid={error.message} errorMsg="This field is required">
           <label htmlFor="message">Message</label>
-          <textarea name="message" id="message" rows={3} required onBlur={checkError} onChange={clearError}></textarea>
+          <textarea name="message" id="message" rows={8} required onBlur={checkError} onChange={clearError}></textarea>
         </FormGroup>
 
-        <FormGroup isValid={error.consent} errorMsg="To submit this form, please consent to being contacted">
-          <input type="checkbox" name="consent" id="consent" required onChange={clearError} />
-          <label htmlFor="consent">I consent to being contacted by the team</label>
+        <FormGroup className="flow--2xl " isValid={error.consent} errorMsg="To submit this form, please consent to being contacted">
+          <div>
+            <label className="flex-flow align-center gap-sm" htmlFor="consent">
+              <input type="checkbox" name="consent" id="consent" required onChange={clearError} />
+              <span>I consent to being contacted by the team</span>
+            </label>
+          </div>
         </FormGroup>
 
-        <button type="submit">Submit</button>
+        <button className="button flow--2xl " type="submit">
+          Submit
+        </button>
       </form>
     </>
   );

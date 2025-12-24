@@ -1,6 +1,6 @@
-function FormGroup({ children, isValid, errorMsg }) {
+function FormGroup({ children, className, isValid, errorMsg }) {
   return (
-    <div className="form-group">
+    <div className={"form-group " + className}>
       {children}
       <span className="error" aria-live="polite">
         {isValid && errorMsg}
