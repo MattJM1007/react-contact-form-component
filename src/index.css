@@ -242,19 +242,21 @@ textarea {
   padding-block: var(--space-sm);
 }
 
-input:hover,
-input:focus-visible,
-textarea:hover,
-textarea:focus-visible {
-  border-color: var(--clr-primary-green-600);
-}
-
 .radio-group {
   border-radius: var(--br-200);
   border: 1px solid var(--clr-neutral-500);
   padding-inline: var(--space-lg);
   padding-block: var(--space-sm);
   cursor: pointer;
+}
+
+input:hover,
+input:focus-visible,
+textarea:hover,
+textarea:focus-visible,
+.radio-group:hover,
+.radio-group:focus-visible {
+  border-color: var(--clr-primary-green-600);
 }
 
 input:not([type="radio"], [type="checkbox"]),
@@ -319,18 +321,27 @@ label:has(input[type="checkbox"]) span:after {
   right: 1rem;
   max-width: fit-content;
   margin-inline: auto;
-  animation: popIn 300ms ease-in-out;
+  animation: popIn 5000ms ease-in-out;
 }
 
 @keyframes popIn {
   0% {
     scale: 0;
   }
-  70% {
+  5% {
+    scale: 1.15;
+  }
+  10% {
+    scale: 1;
+  }
+  90% {
+    scale: 1;
+  }
+  95% {
     scale: 1.15;
   }
   100% {
-    scale: 1;
+    scale: 0;
   }
 }
 

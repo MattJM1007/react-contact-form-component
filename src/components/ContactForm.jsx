@@ -100,7 +100,7 @@ function ContactUsForm() {
 
         <FormGroup isValid={error.message} errorMsg="This field is required">
           <label htmlFor="message">Message</label>
-          <textarea name="message" id="message" rows={8} required onBlur={checkError} onChange={clearError}></textarea>
+          <textarea name="message" id="message" rows={5} required onBlur={checkError} onChange={clearError}></textarea>
         </FormGroup>
 
         <FormGroup className="flow--2xl " isValid={error.consent} errorMsg="To submit this form, please consent to being contacted">
