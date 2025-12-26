@@ -74,30 +74,30 @@ function ContactUsForm() {
         <div className="flow flow--lg grid-2-col">
           <FormGroup isValid={error.fName} errorMsg="This field is required" inputId="fName">
             <label htmlFor="fName">First Name</label>
-            <input type="text" name="fName" id="fName" aria-describedby="fName-error" aria-invalid={error.fname} required onBlur={checkError} onChange={clearError} />
+            <input type="text" name="fName" id="fName" aria-describedby="fName-error" aria-invalid={error.fName} required onBlur={checkError} onInput={clearError} />
           </FormGroup>
 
           <FormGroup isValid={error.lName} errorMsg="This field is required" inputId="lName">
             <label htmlFor="lName">Last Name</label>
-            <input type="text" name="lName" id="lName" aria-describedby="lName-error" aria-invalid={error.lName} required onBlur={checkError} onChange={clearError} />
+            <input type="text" name="lName" id="lName" aria-describedby="lName-error" aria-invalid={error.lName} required onBlur={checkError} onInput={clearError} />
           </FormGroup>
         </div>
 
         <FormGroup isValid={error.email} errorMsg="Please enter a valid email" inputId="email">
           <label htmlFor="email">Email Address</label>
-          <input type="email" name="email" id="email" aria-describedby="email-error" aria-invalid={error.email} required onBlur={checkError} onChange={clearError} />
+          <input type="email" name="email" id="email" aria-describedby="email-error" aria-invalid={error.email} required onBlur={checkError} onInput={clearError} />
         </FormGroup>
 
         <fieldset className="flow">
           <legend>Query Type</legend>
           <FormGroup className="grid-flow grid-2-col" isValid={error.queryType} errorMsg="Please select a query" inputId="queryType">
             <label className="radio-group span-1 fs-md" htmlFor="generalEnquiry">
-              <input type="radio" name="queryType" id="generalEnquiry" value="general" aria-describedby="queryType-error" aria-invalid={error.queryType} required onChange={clearError} />
+              <input type="radio" name="queryType" id="generalEnquiry" value="general" aria-describedby="queryType-error" aria-invalid={error.queryType} required onInput={clearError} />
               General Enquiry
             </label>
 
             <label className="radio-group fs-md" htmlFor="supportRequest">
-              <input type="radio" name="queryType" id="supportRequest" value="support" aria-describedby="queryType-error" aria-invalid={error.queryType} required onChange={clearError} />
+              <input type="radio" name="queryType" id="supportRequest" value="support" aria-describedby="queryType-error" aria-invalid={error.queryType} required onInput={clearError} />
               Support Request
             </label>
           </FormGroup>
@@ -105,13 +105,13 @@ function ContactUsForm() {
 
         <FormGroup isValid={error.message} errorMsg="This field is required" inputId="message">
           <label htmlFor="message">Message</label>
-          <textarea name="message" id="message" rows={5} aria-describedby="message-error" aria-invalid={error.message} required onBlur={checkError} onChange={clearError}></textarea>
+          <textarea name="message" id="message" rows={5} aria-describedby="message-error" aria-invalid={error.message} required onBlur={checkError} onInput={clearError}></textarea>
         </FormGroup>
 
         <FormGroup className="flow--2xl " isValid={error.consent} errorMsg="To submit this form, please consent to being contacted" inputId="consent">
           <div>
             <label className="flex-flow align-center gap-sm" htmlFor="consent">
-              <input type="checkbox" name="consent" id="consent" required aria-describedby="consent-error" aria-invalid={error.consent} onChange={clearError} />I consent to being contacted by the team
+              <input type="checkbox" name="consent" id="consent" required aria-describedby="consent-error" aria-invalid={error.consent} onInput={clearError} />I consent to being contacted by the team
             </label>
           </div>
         </FormGroup>

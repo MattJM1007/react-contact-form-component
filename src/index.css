@@ -315,7 +315,7 @@ label:has(input[type="checkbox"]) span:after {
   --flow-space: var(--space-xs);
   background: var(--clr-neutral-900);
   color: var(--clr-neutral-100);
-  position: absolute;
+  position: fixed;
   top: var(--space-lg);
   left: 1rem;
   right: 1rem;
@@ -326,22 +326,22 @@ label:has(input[type="checkbox"]) span:after {
 
 @keyframes popIn {
   0% {
-    scale: 0;
+    transform: scale(0);
   }
   5% {
-    scale: 1.15;
+    transform: scale(1.15);
   }
   10% {
-    scale: 1;
+    transform: scale(1);
   }
   90% {
-    scale: 1;
+    transform: scale(1);
   }
   95% {
-    scale: 1.15;
+    transform: scale(1.15);
   }
   100% {
-    scale: 0;
+    transform: scale(0);
   }
 }
 
